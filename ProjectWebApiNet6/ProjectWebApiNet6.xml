@@ -120,29 +120,9 @@
             全局连接数据库配置
             </summary>
         </member>
-        <member name="P:ProjectWebApi.Configuration.SiteConfig.ConfigParameter">
+        <member name="P:ProjectWebApi.Configuration.SiteConfig.Redis">
             <summary>
-            全局参数配置
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.SiteConfig.AutoServiceConfig">
-            <summary>
-            自动服务配置
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.SiteConfig.DingDingConfig">
-            <summary>
-            钉钉集成配置
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.SiteConfig.DingDingMobileConfig">
-            <summary>
-            钉钉集成配置
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.SiteConfig.ReportConfig">
-            <summary>
-            报表相关信息配置
+            Redis 配置
             </summary>
         </member>
         <member name="T:ProjectWebApi.Configuration.OrgSyncing">
@@ -215,154 +195,39 @@
             ProjectMySql数据库配置
             </summary>
         </member>
-        <member name="T:ProjectWebApi.Configuration.ConfigParameter">
+        <member name="T:ProjectWebApi.Configuration.Redis">
             <summary>
-            全局参数配置
+            全局Redis 配置
             </summary>
         </member>
-        <member name="P:ProjectWebApi.Configuration.ConfigParameter.WMSUrl">
+        <member name="P:ProjectWebApi.Configuration.Redis.Name">
             <summary>
-            仓库智能密集架
+            别名
             </summary>
         </member>
-        <member name="P:ProjectWebApi.Configuration.ConfigParameter.BPMUrl">
+        <member name="P:ProjectWebApi.Configuration.Redis.Ip">
             <summary>
-            BPM(档案流程申请)
+            服务端地址
             </summary>
         </member>
-        <member name="T:ProjectWebApi.Configuration.ServiceCfgBase">
+        <member name="P:ProjectWebApi.Configuration.Redis.Port">
             <summary>
-            服务配置基础类
+            端口号Port默认是6379
             </summary>
         </member>
-        <member name="P:ProjectWebApi.Configuration.ServiceCfgBase.Switch">
+        <member name="P:ProjectWebApi.Configuration.Redis.Password">
             <summary>
-            开关
+            连接密码
             </summary>
         </member>
-        <member name="P:ProjectWebApi.Configuration.ServiceCfgBase.TimeInterval">
+        <member name="P:ProjectWebApi.Configuration.Redis.Timeout">
             <summary>
-            服务间隔时间(单位：分钟)
+            连接的超时时间
             </summary>
         </member>
-        <member name="T:ProjectWebApi.Configuration.AutoServiceConfig">
+        <member name="P:ProjectWebApi.Configuration.Redis.Db">
             <summary>
-            服务配置
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.AutoServiceConfig.AccountingArchivesServiceCfg">
-            <summary>
-            【会计档案凭证】自动同步服务
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.AutoServiceConfig.PreArchivedDataServiceCfg">
-            <summary>
-            【自动整编预归档库中的数据】定时服务
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.AutoServiceConfig.BMPServiceCfg">
-            <summary>
-            【BMP】自动服务
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.AutoServiceConfig.ArchivesExpirationAutoReminderServiceCfg">
-            <summary>
-            档案过期自动提醒服务
-            </summary>
-        </member>
-        <member name="T:ProjectWebApi.Configuration.AccountingArchivesServiceCfg">
-            <summary>
-            【会计档案凭证】自动同步服务
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.AccountingArchivesServiceCfg.SourceId">
-            <summary>
-            SAP提交元数据所用SourceId，来源：http://172.16.2.48/wcm/edrms#jiekoulaiyuanpeizhiefrom
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.AccountingArchivesServiceCfg.DelayDays">
-            <summary>
-            延迟天数；当前日期减去当前配置天数为服务截止日期。
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.AccountingArchivesServiceCfg.DefaultFondsId">
-            <summary>
-            SAP服务中，未匹配到全宗代码时使用默认的全宗代码
-            </summary>
-        </member>
-        <member name="T:ProjectWebApi.Configuration.PreArchivedDataServiceCfg">
-            <summary>
-            【自动整编预归档库中的数据】定时服务
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.PreArchivedDataServiceCfg.Switch">
-            <summary>
-            开关
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.PreArchivedDataServiceCfg.ExecDate">
-            <summary>
-            服务运行时间点
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.PreArchivedDataServiceCfg.RemindGroup">
-            <summary>
-            发送服务运行结果至该提醒组成员。若为空，则不提醒
-            </summary>
-        </member>
-        <member name="T:ProjectWebApi.Configuration.ArchivesExpirationAutoReminderServiceCfg">
-            <summary>
-            档案到期自动提醒服务
-            </summary>
-        </member>
-        <member name="T:ProjectWebApi.Configuration.BMPServiceCfg">
-            <summary>
-            【BMP】自动服务
-            </summary>
-        </member>
-        <member name="T:ProjectWebApi.Configuration.DingDingConfig">
-            <summary>
-            钉钉集成配置
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.DingDingConfig.CorpId">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.DingDingConfig.AgentId">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.DingDingConfig.AppKey">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.DingDingConfig.AppSecret">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:ProjectWebApi.Configuration.DingDingMobileConfig">
-            <summary>
-            钉钉移动端集成配置
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.DingDingMobileConfig.RedirectEdrmsLoginUrl">
-            <summary>
-            钉钉配置地址
-            </summary>
-        </member>
-        <member name="T:ProjectWebApi.Configuration.ReportConfig">
-            <summary>
-            报表相关信息配置
-            </summary>
-        </member>
-        <member name="P:ProjectWebApi.Configuration.ReportConfig.UploadFolderId">
-            <summary>
-            报表上传临时存储文件夹
+            使用Redis的DB区，一般Redis的DB区默认是0到15
             </summary>
         </member>
         <member name="T:ProjectWebApi.Configuration.DataResult`1">
@@ -1604,7 +1469,7 @@
         </member>
         <member name="T:ProjectWebApiNet5.Controllers.TestController">
             <summary>
-            测试Controllers
+            测试Controllers 编辑时间2022-03-03-16-38
             </summary>
         </member>
         <member name="M:ProjectWebApiNet5.Controllers.TestController.#ctor(Microsoft.Extensions.Options.IOptions{ProjectWebApiNet5.Service.LogMessages.LogMessagesService},Microsoft.Extensions.Options.IOptions{ProjectWebApiNet5.Service.ValuesService},Microsoft.Extensions.Logging.ILogger{ProjectWebApi.Configuration.LogHelper})">
@@ -1812,6 +1677,60 @@
             DELETE api/ValuesController/5
             </summary>
             <param name="id">编号</param>
+        </member>
+        <member name="T:ProjectWebApiNet6.Model.Redis.RedisModel">
+            <summary>
+            Redis 请求配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet6.Model.Redis.RedisModel.Name">
+            <summary>
+            别名
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet6.Model.Redis.RedisModel.Ip">
+            <summary>
+            服务端地址
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet6.Model.Redis.RedisModel.Port">
+            <summary>
+            端口号Port默认是6379
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet6.Model.Redis.RedisModel.Password">
+            <summary>
+            连接密码
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet6.Model.Redis.RedisModel.Timeout">
+            <summary>
+            连接的超时时间
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet6.Model.Redis.RedisModel.Db">
+            <summary>
+            使用Redis的DB区，一般Redis的DB区默认是0到15
+            </summary>
+        </member>
+        <member name="T:ProjectWebApiNet6.Service.Redis.RedisService">
+            <summary>
+            Redis 
+            </summary>
+        </member>
+        <member name="M:ProjectWebApiNet6.Service.Redis.RedisService.ReadRedisSetting">
+            <summary>
+            获取 Redis 配置信息
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:ProjectWebApiNet6.Service.Redis.RedisService.ConnectionRedis">
+            <summary>
+            开始 Redis 连接操作
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
         </member>
     </members>
 </doc>

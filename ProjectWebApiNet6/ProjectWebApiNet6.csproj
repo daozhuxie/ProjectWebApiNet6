@@ -18,7 +18,9 @@
 
   <ItemGroup>
     <PackageReference Include="NLog.Web.AspNetCore" Version="4.14.0" />
+    <PackageReference Include="ServiceStack.Redis" Version="6.0.2" />
     <PackageReference Include="SqlSugarCore" Version="5.0.5.4" />
+    <PackageReference Include="StackExchange.Redis" Version="2.2.88" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 

@@ -62,25 +62,9 @@ namespace ProjectWebApi.Configuration
         /// </summary>
         public ConectionConfig ConectionConfig { get; set; }
         /// <summary>
-        /// 全局参数配置
+        /// Redis 配置
         /// </summary>
-        public ConfigParameter ConfigParameter { get; set; }
-        /// <summary>
-        /// 自动服务配置
-        /// </summary>
-        public AutoServiceConfig AutoServiceConfig { get; set; }
-        /// <summary>
-        /// 钉钉集成配置
-        /// </summary>
-        public DingDingConfig DingDingConfig { get; set; }
-        /// <summary>
-        /// 钉钉集成配置
-        /// </summary>
-        public DingDingMobileConfig DingDingMobileConfig { get; set; }
-        /// <summary>
-        /// 报表相关信息配置
-        /// </summary>
-        public ReportConfig ReportConfig { get; set; }
+        public Redis Redis { get; set; }
     }
 
     /// <summary>
@@ -146,153 +130,33 @@ namespace ProjectWebApi.Configuration
     }
 
     /// <summary>
-    /// 全局参数配置
+    /// 全局Redis 配置
     /// </summary>
-    public class ConfigParameter
+    public class Redis
     {
         /// <summary>
-        /// 仓库智能密集架
+        /// 别名
         /// </summary>
-        public string WMSUrl { get; set; }
+        public string Name { get; set; }
         /// <summary>
-        /// BPM(档案流程申请)
+        /// 服务端地址
         /// </summary>
-        public string BPMUrl { get; set; }
-    }
-
-    #region 自动服务配置
-    /// <summary>
-    /// 服务配置基础类
-    /// </summary>
-    public class ServiceCfgBase
-    {
+        public string Ip { get; set; }
         /// <summary>
-        /// 开关
+        /// 端口号Port默认是6379
         /// </summary>
-        public string Switch { get; set; } = "OFF";
+        public string Port { get; set; }
         /// <summary>
-        /// 服务间隔时间(单位：分钟)
+        /// 连接密码
         /// </summary>
-        public string TimeInterval { get; set; } = "1";
-    }
-
-    /// <summary>
-    /// 服务配置
-    /// </summary>
-    public class AutoServiceConfig
-    {
+        public string Password { get; set; }
         /// <summary>
-        /// 【会计档案凭证】自动同步服务
+        /// 连接的超时时间
         /// </summary>
-        public AccountingArchivesServiceCfg AccountingArchivesServiceCfg { get; set; }
-
+        public string Timeout { get; set; }
         /// <summary>
-        /// 【自动整编预归档库中的数据】定时服务
+        /// 使用Redis的DB区，一般Redis的DB区默认是0到15
         /// </summary>
-        public PreArchivedDataServiceCfg PreArchivedDataServiceCfg { get; set; }
-
-        /// <summary>
-        /// 【BMP】自动服务
-        /// </summary>
-        public BMPServiceCfg BMPServiceCfg { get; set; }
-
-        /// <summary>
-        /// 档案过期自动提醒服务
-        /// </summary>
-        public ArchivesExpirationAutoReminderServiceCfg ArchivesExpirationAutoReminderServiceCfg { get; set; }
-    }
-
-    /// <summary>
-    /// 【会计档案凭证】自动同步服务
-    /// </summary>
-    public class AccountingArchivesServiceCfg : ServiceCfgBase
-    {
-        /// <summary>
-        /// SAP提交元数据所用SourceId，来源：http://172.16.2.48/wcm/edrms#jiekoulaiyuanpeizhiefrom
-        /// </summary>
-        public string SourceId { get; set; }
-        /// <summary>
-        /// 延迟天数；当前日期减去当前配置天数为服务截止日期。
-        /// </summary>
-        public string DelayDays { get; set; }
-        /// <summary>
-        /// SAP服务中，未匹配到全宗代码时使用默认的全宗代码
-        /// </summary>
-        public string DefaultFondsId { get; set; }
-    }
-
-    /// <summary>
-    /// 【自动整编预归档库中的数据】定时服务
-    /// </summary>
-    public class PreArchivedDataServiceCfg
-    {
-        /// <summary>
-        /// 开关
-        /// </summary>
-        public string Switch { get; set; } = "OFF";
-        /// <summary>
-        /// 服务运行时间点
-        /// </summary>
-        public string ExecDate { get; set; }
-        /// <summary>
-        /// 发送服务运行结果至该提醒组成员。若为空，则不提醒
-        /// </summary>
-        public string RemindGroup { get; set; }
-    }
-
-    /// <summary>
-    /// 档案到期自动提醒服务
-    /// </summary>
-    public class ArchivesExpirationAutoReminderServiceCfg : ServiceCfgBase { }
-
-    /// <summary>
-    /// 【BMP】自动服务
-    /// </summary>
-    public class BMPServiceCfg : ServiceCfgBase { }
-    #endregion
-
-    /// <summary>
-    /// 钉钉集成配置
-    /// </summary>
-    public class DingDingConfig
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        public string CorpId { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string AgentId { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string AppKey { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string AppSecret { get; set; }
-    }
-
-    /// <summary>
-    /// 钉钉移动端集成配置
-    /// </summary>
-    public class DingDingMobileConfig : DingDingConfig
-    {
-        /// <summary>
-        /// 钉钉配置地址
-        /// </summary>
-        public string RedirectEdrmsLoginUrl { get; set; }
-    }
-
-    /// <summary>
-    /// 报表相关信息配置
-    /// </summary>
-    public class ReportConfig
-    {
-        /// <summary>
-        /// 报表上传临时存储文件夹
-        /// </summary>
-        public string UploadFolderId { get; set; }
+        public string Db { get; set; }
     }
 }

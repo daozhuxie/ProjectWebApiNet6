@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ProjectWebApiNet6.Service.Redis;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,6 +21,8 @@ namespace ProjectWebApiNet6.Controllers
         [HttpGet]
         public IEnumerable<string> Getxxy()
         {
+            RedisService redisService = new RedisService();
+            
             return new string[] { "value1", "value2" };
         }
 
