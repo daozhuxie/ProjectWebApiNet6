@@ -1,0 +1,1817 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProjectWebApiNet6</name>
+    </assembly>
+    <members>
+        <member name="T:ProjectWebApi.Configuration.ApiResultFilter">
+            <summary>
+            过滤器
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.ApiResultFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            方法执行前
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.ApiResultFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            方法执行后,返回结果处理
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.Robj`1">
+            <summary>
+            返回结果对象
+            默认RCode为成功,Message为成功.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.Robj`1.Result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.Robj`1.Code">
+            <summary>
+            执行结果
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.Robj`1.Message">
+            <summary>
+            提示消息
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Robj`1.Success(`0,System.String)">
+            <summary>
+            成功
+            </summary>
+            <param name="result">返回结果</param>
+            <param name="msg">提示消息</param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Robj`1.Error(`0,System.Int32,System.String)">
+            <summary>
+            异常
+            </summary>
+            <param name="result"></param>
+            <param name="msg">提示消息</param>
+            <param name="code"></param>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.ValidationError">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.ValidationError.Code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.ValidationError.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.ValidationError.Result">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.ValidationError.#ctor(System.Int32,System.String)">
+            <summary>
+            构造请求参数
+            </summary>
+            <param name="code"></param>
+            <param name="result"></param>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.SiteConfigOutput">
+            <summary>
+            封装公共方法，获取appsettings.js配置的变量
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.SiteConfigOutput._siteConfig">
+            <summary>
+            公共的静态变量
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.SiteConfigOutput._dbInfoService">
+            <summary>
+            公共的静态变量
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.SiteConfigOutput.#cctor">
+            <summary>
+            静态构造方法
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.SiteConfig">
+            <summary>
+            设置主对象指向 appsettings.json 下的子对象
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.SiteConfig.OrgSyncing">
+            <summary>
+            全局连接接口动态配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.SiteConfig.ConectionConfig">
+            <summary>
+            全局连接数据库配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.SiteConfig.ConfigParameter">
+            <summary>
+            全局参数配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.SiteConfig.AutoServiceConfig">
+            <summary>
+            自动服务配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.SiteConfig.DingDingConfig">
+            <summary>
+            钉钉集成配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.SiteConfig.DingDingMobileConfig">
+            <summary>
+            钉钉集成配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.SiteConfig.ReportConfig">
+            <summary>
+            报表相关信息配置
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.OrgSyncing">
+            <summary>
+            全局连接接口动态配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.OrgSyncing.EDRMS_HTTP">
+            <summary>
+            整个系统对应的Ip地址
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.OrgSyncing.EDoc2_token">
+            <summary>
+            获取产品token地址
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.OrgSyncing.EDoc2_perm_token">
+            <summary>
+            默认永久token
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.OrgSyncing.EDoc2_IntegrationKey">
+            <summary>
+            密钥
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.OrgSyncing.EDoc2_AdminAccount">
+            <summary>
+            管理员账号
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.OrgSyncing.EDoc2_IpAddress">
+            <summary>
+            EdocIP
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.OrgSyncing.EDoc2_InsertStorageRecord">
+            <summary>
+            温/湿度导入
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.OrgSyncing.EDoc2_SetFilePermission">
+            <summary>
+            产品文件夹/文件赋值权限
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.OrgSyncing.EDoc2_SendSysMailMessage">
+            <summary>
+            产品系统发送邮件
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.ConectionConfig">
+            <summary>
+            全局连接数据库配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.ConectionConfig.ProjectSql">
+            <summary>
+            ProjectSql数据库配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.ConectionConfig.ProjectOracle">
+            <summary>
+            ProjectOracle数据库配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.ConectionConfig.ProjectMySql">
+            <summary>
+            ProjectMySql数据库配置
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.ConfigParameter">
+            <summary>
+            全局参数配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.ConfigParameter.WMSUrl">
+            <summary>
+            仓库智能密集架
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.ConfigParameter.BPMUrl">
+            <summary>
+            BPM(档案流程申请)
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.ServiceCfgBase">
+            <summary>
+            服务配置基础类
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.ServiceCfgBase.Switch">
+            <summary>
+            开关
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.ServiceCfgBase.TimeInterval">
+            <summary>
+            服务间隔时间(单位：分钟)
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.AutoServiceConfig">
+            <summary>
+            服务配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.AutoServiceConfig.AccountingArchivesServiceCfg">
+            <summary>
+            【会计档案凭证】自动同步服务
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.AutoServiceConfig.PreArchivedDataServiceCfg">
+            <summary>
+            【自动整编预归档库中的数据】定时服务
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.AutoServiceConfig.BMPServiceCfg">
+            <summary>
+            【BMP】自动服务
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.AutoServiceConfig.ArchivesExpirationAutoReminderServiceCfg">
+            <summary>
+            档案过期自动提醒服务
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.AccountingArchivesServiceCfg">
+            <summary>
+            【会计档案凭证】自动同步服务
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.AccountingArchivesServiceCfg.SourceId">
+            <summary>
+            SAP提交元数据所用SourceId，来源：http://172.16.2.48/wcm/edrms#jiekoulaiyuanpeizhiefrom
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.AccountingArchivesServiceCfg.DelayDays">
+            <summary>
+            延迟天数；当前日期减去当前配置天数为服务截止日期。
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.AccountingArchivesServiceCfg.DefaultFondsId">
+            <summary>
+            SAP服务中，未匹配到全宗代码时使用默认的全宗代码
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.PreArchivedDataServiceCfg">
+            <summary>
+            【自动整编预归档库中的数据】定时服务
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.PreArchivedDataServiceCfg.Switch">
+            <summary>
+            开关
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.PreArchivedDataServiceCfg.ExecDate">
+            <summary>
+            服务运行时间点
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.PreArchivedDataServiceCfg.RemindGroup">
+            <summary>
+            发送服务运行结果至该提醒组成员。若为空，则不提醒
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.ArchivesExpirationAutoReminderServiceCfg">
+            <summary>
+            档案到期自动提醒服务
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.BMPServiceCfg">
+            <summary>
+            【BMP】自动服务
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.DingDingConfig">
+            <summary>
+            钉钉集成配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DingDingConfig.CorpId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DingDingConfig.AgentId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DingDingConfig.AppKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DingDingConfig.AppSecret">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.DingDingMobileConfig">
+            <summary>
+            钉钉移动端集成配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DingDingMobileConfig.RedirectEdrmsLoginUrl">
+            <summary>
+            钉钉配置地址
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.ReportConfig">
+            <summary>
+            报表相关信息配置
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.ReportConfig.UploadFolderId">
+            <summary>
+            报表上传临时存储文件夹
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.DataResult`1">
+            <summary>
+            API接口返回类型
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DataResult`1.Data">
+            <summary>
+            Object 返回接口业务数据 --数据要自动转Json
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DataResult`1.ResultCode">
+            <summary>
+            状态码 1:代表成功 ,0:代表失败 ,2:或其他
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DataResult`1.Message">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DataResult`1.DataDescription">
+            <summary>
+            数据描述
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.DataInput`1">
+            <summary>
+            API输入消息定义类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DataInput`1.Data">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DataInput`1.LogUserId">
+            <summary>
+            登录用户ID
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DataInput`1.LogCode">
+            <summary>
+            登录用户Code
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.DataInput`1.Type">
+            <summary>
+            存储借阅主表的借阅备注
+            -- 操作流程类型/借阅/续借/鉴定/销毁  renew:续借=1,preview:正常借阅=0
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.HttpClientHelper">
+            <summary>
+            封装接口请求
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpClientHelper.Post(System.String,System.Object)">
+            <summary>
+            Post请求
+            </summary>
+            <param name="url"></param>
+            <param name="requestData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpClientHelper.Post``1(System.String,System.Object,System.String)">
+            <summary>
+            Post请求
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="requestData"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpClientHelper.Post(System.String,System.String,System.String)">
+            <summary>
+            Post请求
+            </summary>
+            <param name="url"></param>
+            <param name="requestData"></param>
+            <param name="mediaType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpClientHelper.Post(System.String,System.String)">
+            <summary>
+            Post请求
+            </summary>
+            <param name="url"></param>
+            <param name="jsonContent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpClientHelper.PostAsync(System.String,System.Object)">
+            <summary>
+            post请求
+            </summary>
+            <param name="url"></param>
+            <param name="requestData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpClientHelper.PostAsync``1(System.String,System.Object)">
+            <summary>
+            Post请求
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="requestData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpClientHelper.GetAsync(System.String)">
+            <summary>
+            Get请求
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpClientHelper.GetAsync``1(System.String)">
+            <summary>
+            GET 异步
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpClientHelper.Get``1(System.String)">
+            <summary>
+            Get请求
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpClientHelper.Get(System.String)">
+            <summary>
+            Get请求
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpClientHelper.Get(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Get请求
+            </summary>
+            <param name="baseUrl"></param>
+            <param name="dicParams"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.HttpPostApi">
+            <summary>
+            封装访问HttpPostApi访问形式
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.HttpPostApi.GetHttpPostApiModel1">
+            <summary>
+            接口请求模板
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.HttpPostApi.GetHttpPostApiModel1.url">
+            <summary>
+            url
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.HttpPostApi.GetHttpPostApiModel1.Method">
+            <summary>
+            请求类型
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.HttpPostApi.GetHttpPostApiModel1.strjson">
+            <summary>
+            Body传参 字符串转json
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.HttpPostApi.GetHttpPostApiModel1.headersArray">
+            <summary>
+            Headers传参 
+            列如： key1:admin,key2:123,key3:1234
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpPostApi.GetHttpPostApiModel1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.HttpPostApi.headersArray">
+            <summary>
+            键值对
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.HttpPostApi.headersArray.headersKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.HttpPostApi.headersArray.headersValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpPostApi.GetHttpPostApi(ProjectWebApi.Configuration.HttpPostApi.GetHttpPostApiModel1)">
+            <summary>
+            HttpPost 手动配置，可多个url 连调
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpPostApi.HttpPost(System.String,System.String)">
+            <summary>
+            传统的HttpPost接口调用
+            </summary>
+            <param name="url">指定调用接口的Ip地址</param>
+            <param name="jsonStr">传参的Json格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpPostApi.HttpGet(System.String)">
+            <summary>
+            HttpGet
+            </summary>
+            <param name="url">Get请求的Url地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.HttpPostApi.HttpPostTest(System.String,System.String)">
+            <summary>
+            传统的HttpPost接口调用 application/x-www-form-urlencoded
+            </summary>
+            <param name="url">指定调用接口的Ip地址</param>
+            <param name="postdata">传参appid=ssss并且loginid=shuy格式</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.JsonHelper">
+            <summary>
+            Newtonsoft.Json 帮助类
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.JsonHelper.SerializeObject(System.Object)">
+            <summary>
+            将对象序列化为JSON格式
+            </summary>
+            <param name="o">对象</param>
+            <returns>json字符串</returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.JsonHelper.SerializeObjectJson(System.String)">
+            <summary>
+            格式化 json 字符串的斜杠,特殊字符,
+            </summary>
+            <param name="jsonstr">存在特殊字符串的json 字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.JsonHelper.DeserializeJsonToObject``1(System.String)">
+            <summary>
+            解析JSON字符串生成对象实体
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="json">json字符串(eg.{"ID":"112","Name":"石子儿"})</param>
+            <returns>对象实体</returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.JsonHelper.DeserializeJsonToList``1(System.String)">
+            <summary>
+            解析JSON数组生成对象实体集合
+            
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="json">json数组字符串(eg.[{"ID":"112","Name":"石子儿"}])</param>
+            <returns>对象实体集合</returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.JsonHelper.DeserializeAnonymousType``1(System.String,``0)">
+            <summary>
+            反序列化JSON到给定的匿名对象.
+            </summary>
+            <typeparam name="T">匿名对象类型</typeparam>
+            <param name="json">json字符串</param>
+            <param name="anonymousTypeObject">匿名对象</param>
+            <returns>匿名对象</returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.JsonHelper.DataTableToJson(System.Data.DataTable)">
+            <summary>
+            DataTable 转 Json
+            </summary>
+            <param name="dtb"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.JsonHelper.JsonToDataTable(System.String)">
+            <summary>
+            Json格式转Datable格式
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.JsonHelper.ListToDataTable``1(System.Collections.Generic.List{``0})">
+            <summary>
+            list 转 DataTable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entitys"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.DbTableConvertor`1">
+            <summary>
+                数据表转换类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.DbTableConvertor`1.ConvertToList(System.Data.DataTable)">
+            <summary>
+            将DataTable转换为实体列表
+            </summary>
+            <param name="dt">待转换的DataTable</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.DbTableConvertor`1.ConvertToEntity(System.Data.DataTable)">
+            <summary>
+            将DataTable的首行转换为实体
+            </summary>
+            <param name="dt">待转换的DataTable</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.LogFactory">
+            <summary>
+            打印日志信息
+            </summary>
+        </member>
+        <member name="F:ProjectWebApi.Configuration.LogFactory.log">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogFactory.#ctor(System.String)">
+            <summary>
+            日志类
+            </summary>
+            <param name="filename">文件夹名称</param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogFactory.Info(System.String)">
+            <summary>
+            信息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogFactory.Error(System.String)">
+            <summary>
+            错误
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogFactory.Debug(System.String)">
+            <summary>
+            系统错误
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.LogHelper">
+            <summary>
+            日志封装记录类
+            </summary>
+        </member>
+        <member name="F:ProjectWebApi.Configuration.LogHelper.strTime">
+            <summary>
+            初始化时间
+            </summary>
+        </member>
+        <member name="F:ProjectWebApi.Configuration.LogHelper._logger">
+            <summary>
+            定义对象
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogHelper.#ctor(Microsoft.Extensions.Logging.ILogger{ProjectWebApi.Configuration.LogHelper})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogHelper.WriteLog(System.String,System.String)">
+            <summary>
+            封装日志 info/error/dug/
+            </summary>
+            <param name="logType">日志类型</param>
+            <param name="LogString"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogHelper.WriteLog(System.String)">
+            <summary>
+            封装日志
+            </summary>
+            <param name="LogString"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogHelper.ConsoleWriteLine">
+            <summary>
+            Console消息记录的写法
+            </summary>
+        </member>
+        <member name="F:ProjectWebApi.Configuration.LogHelper.path">
+            <summary>
+            在网站根目录下创建日志目录(bin文件夹→debug文件夹→logs文件夹)
+            </summary>
+        </member>
+        <member name="F:ProjectWebApi.Configuration.LogHelper.loglock">
+            <summary>
+            死锁-锁住队列
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogHelper.TextDebug(System.String)">
+            <summary>
+            Text写入调试提示
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogHelper.TextInfo(System.String)">
+            <summary>
+            Text写入消息提示
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogHelper.TextError(System.String)">
+            <summary>
+            Text写入问题提示
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogHelper.TextWriteLog(System.String,System.String)">
+            <summary>
+            封装往Text记录
+            </summary>
+            <param name="type"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.LogHelper.dateTime">
+            <summary>
+            获取实时时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.NLogHelper">
+            <summary>
+            Nlog日志帮助类
+            Trace 包含大量的信息，例如 protocol payloads。一般仅在开发环境中启用, 仅输出不存文件。
+            Debug  比 Trance 级别稍微粗略，一般仅在开发环境中启用, 仅输出不存文件。
+            Info 一般在生产环境中启用。
+            Warn 一般用于可恢复或临时性错误的非关键问题。
+            Error 一般是异常信息。
+            Fatal - 非常严重的错误！
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.NLogHelper.#ctor(System.String)">
+            <summary>
+            自定义 ${logger} (我用于区分文件夹)
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:ProjectWebApi.Configuration.NLogHelper.Default">
+            <summary>
+            默认 ${logger} (Default 文件夹下)
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.NLogHelper.Debug(System.String,System.Object[])">
+            <summary>
+            调试
+            </summary>
+            <param name="msg"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.NLogHelper.Debug(System.String,System.Exception)">
+            <summary>
+            调试
+            </summary>
+            <param name="msg"></param>
+            <param name="err"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.NLogHelper.Info(System.String,System.Object[])">
+            <summary>
+            消息
+            </summary>
+            <param name="msg"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.NLogHelper.Info(System.String,System.Exception)">
+            <summary>
+            消息
+            </summary>
+            <param name="msg"></param>
+            <param name="err"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.NLogHelper.Trace(System.String,System.Object[])">
+            <summary>
+            查出问题
+            </summary>
+            <param name="msg"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.NLogHelper.Trace(System.String,System.Exception)">
+            <summary>
+            查出问题
+            </summary>
+            <param name="msg"></param>
+            <param name="err"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.NLogHelper.Error(System.String,System.Object[])">
+            <summary>
+            错误
+            </summary>
+            <param name="msg"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.NLogHelper.Error(System.String,System.Exception)">
+            <summary>
+            错误
+            </summary>
+            <param name="msg"></param>
+            <param name="err"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.NLogHelper.Fatal(System.String,System.Object[])">
+            <summary>
+            致命问题
+            </summary>
+            <param name="msg"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.NLogHelper.Fatal(System.String,System.Exception)">
+            <summary>
+            致命问题
+            </summary>
+            <param name="msg"></param>
+            <param name="err"></param>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.UnionExceptionAttribute">
+            <summary>
+            错误捕捉？
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.UnionExceptionAttribute.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            错误捕捉？
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.Utility">
+            <summary>
+            工具方法集合
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetAbsoluteUri(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            <para>获取当前调用的api路径</para>
+            <para>net core中使用</para>
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetFileInfo(System.String,System.String)">
+            <summary>
+            获取文件信息
+            <para>适用于Windows、Linux</para>
+            </summary>
+            <param name="fileFullPath">文件的绝对路径或完整路径</param>
+            <param name="webRootPath">根目录，必须是一个明确的文件夹路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetFileMD5(System.IO.Stream)">
+            <summary>
+            根据文件流，获取文件MD5值
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetFileMD5(System.String)">
+            <summary>  
+            根据文件全路径，获取文件MD5值
+            </summary>  
+            <param name="path">文件地址</param>  
+            <returns>MD5Hash</returns>  
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.ReadFileBytes(System.String)">
+            <summary>
+            <para>读取文件字节</para>
+            <para>*该方法net core、net formwork均适用</para>
+            <para>注意：File.ReadAllBytes(filePath);不适用于net core</para>
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.SHA1(System.String)">
+            <summary>
+            SHA1加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.HmacSHA256(System.String,System.String)">
+            <summary>
+            HMAC-SHA256加密
+            </summary>
+            <param name="message"></param>
+            <param name="secret"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.MD5(System.String,System.Text.Encoding)">
+            <summary>
+            计算MD5
+            </summary>
+            <param name="source"></param>
+            <param name="encode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.MD5Byte(System.String,System.Text.Encoding)">
+            <summary>
+            MD5 字节格式
+            </summary>
+            <param name="source"></param>
+            <param name="encode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.Base64(System.String,System.Text.Encoding)">
+            <summary>
+            计算Base64
+            </summary>
+            <param name="source"></param>
+            <param name="encode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.AESEncrypt(System.String,System.String)">
+            <summary>
+             AES 加密
+            </summary>
+            <param name="str">明文（待加密）</param>
+            <param name="key">密文</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.AESDecrypt(System.String,System.String)">
+            <summary>
+             AES 解密
+            </summary>
+            <param name="str">明文（待解密）</param>
+            <param name="key">密文</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.ReadStream(System.IO.Stream)">
+            <summary>
+            读取Stream到byte[]
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetTimeStamp(System.DateTime)">
+            <summary>
+            获取时间戳
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetNowTimeStamp">
+            <summary>
+            获取当前时间戳-精确到毫秒
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetNowFormatDatetime">
+            <summary>
+            获取当前格式化时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetLocalGetTimeStamp(System.DateTime)">
+            <summary>
+            获取时间戳
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.FormatDatetime(System.DateTime)">
+            <summary>
+            格式化时间
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetSecondTimeStamp(System.DateTime)">
+            <summary>
+            获取秒级时间戳
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.TimeStampToDate(System.Int64)">
+            <summary>
+            时间戳转日期
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetDateTime(System.Int64)">
+            <summary>
+            时间戳转为时间
+            </summary>
+            <param name="timeStamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetTime(System.String)">
+            <summary>
+            时间戳转为C#格式时间
+            </summary>
+            <param name="timeStamp">Unix时间戳格式</param>
+            <returns>C#格式时间</returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.ConvertLongTime(System.Int64)">
+            <summary>
+            将时间整数转为字符串
+            </summary>
+            <param name="longTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.UnicodeToGB(System.String)">
+            <summary>
+            Unicode转字符串
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.Serialize(System.Object)">
+            <summary>
+            对象转Json数据
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.Deserialize``1(System.String)">
+            <summary>
+            Json数据转对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.DataTableToString(System.Data.DataTable,System.String)">
+            <summary>
+            DataTable 转 Json
+            </summary>
+            <param name="dt">DataTable</param>
+            <param name="tbname">表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.TimeStart(ProjectWebApi.Configuration.TimeType,System.DateTime)">
+            <summary>
+            获取开始时间
+            周：一周的开始时间到结束时间为：周一到周日
+               国际惯例为：周日到周六
+            </summary>
+            <param name="timeType">Week、Month、Season、Year</param>
+            <param name="now"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.TimeEnd(ProjectWebApi.Configuration.TimeType,System.DateTime)">
+            <summary>
+            获取结束时间
+            </summary>
+            <param name="timeType">Week、Month、Season、Year</param>
+            <param name="now"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.GetProperties``1(``0)">
+            <summary>
+            获取实体类的字段名称和值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.Utility.SetProperties``1(``0,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            已知属性设置成实体类
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <param name="dic"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.TimeType">
+            <summary>
+            时间格式枚举
+            Week、Month、Season、Year
+            </summary>
+        </member>
+        <member name="F:ProjectWebApi.Configuration.TimeType.Week">
+            <summary>
+            周
+            </summary>
+        </member>
+        <member name="F:ProjectWebApi.Configuration.TimeType.Month">
+            <summary>
+            月
+            </summary>
+        </member>
+        <member name="F:ProjectWebApi.Configuration.TimeType.Season">
+            <summary>
+            季度
+            </summary>
+        </member>
+        <member name="F:ProjectWebApi.Configuration.TimeType.Year">
+            <summary>
+            年
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.WMSEnum">
+            <summary>
+            控制智能密集架转换
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.WMSEnum.state(System.String)">
+            <summary>
+            智能密集架接口：返回状态说明
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.WMSEnum.command(System.String)">
+            <summary>
+            柜体控制码说明 
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectWebApi.Configuration.XmlSerializeHelper">
+            <summary>
+            xml 文件序列化
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.XmlSerializeHelper.Serialize``1(``0)">
+            <summary>
+            将内容序列号成字符串
+            </summary>
+            <typeparam name="T">对象</typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.XmlSerializeHelper.ObjToXml(System.Object)">
+            <summary>
+            对象转XML
+            </summary>
+            <param name="obj">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.XmlSerializeHelper.Serialize``1(``0,System.Text.Encoding)">
+            <summary>
+            实体对象序列化成xml字符串  
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.Configuration.XmlSerializeHelper.DeSerialize``1(System.String)">
+            <summary>  
+            反序列化xml字符为对象，默认为Utf-8编码  
+            </summary>  
+            <typeparam name="T"></typeparam>  
+            <param name="xml"></param>  
+            <returns></returns>  
+        </member>
+        <member name="M:ProjectWebApi.Configuration.XmlSerializeHelper.DeSerialize``1(System.String,System.Text.Encoding)">
+            <summary>  
+            反序列化xml字符为对象  
+            </summary>  
+            <typeparam name="T"></typeparam>  
+            <param name="xml"></param>  
+            <param name="encoding"></param>  
+            <returns></returns>  
+        </member>
+        <member name="T:ProjectWebApi.Model.DBTableAddress">
+            <summary>
+            数据库访问地址公用模板
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Model.DBTableAddress.DBSettings">
+            <summary>
+            完整的地址访问字符串地址
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Model.DBTableAddress.ServerUrl">
+            <summary>
+            登录具体的Ip地址
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Model.DBTableAddress.User">
+            <summary>
+            登录名称
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Model.DBTableAddress.Pwd">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Model.DBTableAddress.Database">
+            <summary>
+            登录数据库名
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Model.DBTableAddress.Port">
+            <summary>
+            端口号
+            </summary>
+        </member>
+        <member name="P:ProjectWebApi.Model.DBTableAddress.DbType">
+            <summary>
+            登录数据库类型
+            </summary>
+        </member>
+        <member name="T:ProjectWebApi.DBIService.Config.IDBInfoService">
+            <summary>
+            映射数据库
+            </summary>
+        </member>
+        <member name="M:ProjectWebApi.DBIService.Config.IDBInfoService.GetDataBase(SqlSugar.DbType,System.String,System.String,System.String)">
+            <summary>
+            获取所有数据库
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.DBIService.Config.IDBInfoService.GetTable(SqlSugar.DbType,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.DBIService.Config.IDBInfoService.GetProc(SqlSugar.DbType,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.DBIService.Config.IDBInfoService.GetColumn(SqlSugar.DbType,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <param name="tbName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.DBIService.Config.IDBInfoService.ExecSql(SqlSugar.DbType,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <param name="sqlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.DBIService.Config.IDBInfoService.ExecSql(SqlSugar.DbType,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{SqlSugar.SugarParameter})">
+            <summary>
+            
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <param name="port"></param>
+            <param name="sqlStr"></param>
+            <param name="paraLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.DBIService.Config.IDBInfoService.ExecSql(SqlSugar.DbType,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dbType"></param>
+            <param name="connectionStr"></param>
+            <param name="sqlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.DBIService.Config.IDBInfoService.ExecProc(SqlSugar.DbType,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{SqlSugar.SugarParameter})">
+            <summary>
+            
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <param name="spName"></param>
+            <param name="paraLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApi.DBIService.Config.IDBInfoService.ExecSqlNonQuery(SqlSugar.DbType,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{SqlSugar.SugarParameter})">
+            <summary>
+            
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <param name="port"></param>
+            <param name="sqlStr"></param>
+            <param name="paraLst"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Configuration.DBInfoService">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="P:Configuration.DBInfoService.Db">
+            <summary>
+            数据库Db 连接
+            </summary>
+        </member>
+        <member name="M:Configuration.DBInfoService.GetNewInstance(System.String,SqlSugar.DbType)">
+            <summary>
+            SqlSugar 配置
+            </summary>
+            <param name="connectionString"></param>
+            <param name="providerType"></param>
+        </member>
+        <member name="M:Configuration.DBInfoService.GetConnectionString(SqlSugar.DbType,System.String,System.String,System.String)">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.GetConnectionString(SqlSugar.DbType,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <param name="Port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.GetDataBaseString(SqlSugar.DbType)">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.GetTableString(SqlSugar.DbType,System.String)">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <param name="database"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.GetProcString(SqlSugar.DbType,System.String)">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <param name="database"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.GetColumnString(SqlSugar.DbType,System.String,System.String)">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <param name="database"></param>
+            <param name="objName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.GetDataBase(SqlSugar.DbType,System.String,System.String,System.String)">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.GetTable(SqlSugar.DbType,System.String,System.String,System.String,System.String)">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.GetProc(SqlSugar.DbType,System.String,System.String,System.String,System.String)">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.GetColumn(SqlSugar.DbType,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <param name="objName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.ExecSql(SqlSugar.DbType,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            连接数据库执行Sql脚本 -暂未使用
+            </summary>
+            <param name="dbType">数据库类型</param>
+            <param name="serverUrl">连接Ip地址</param>
+            <param name="user">登录名称</param>
+            <param name="pwd">密码</param>
+            <param name="database">库名</param>
+            <param name="sqlStr">sql脚本</param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.ExecSql(SqlSugar.DbType,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{SqlSugar.SugarParameter})">
+            <summary>
+            往数据插入数据时使用
+            </summary>
+            <param name="dbType">数据库类型</param>
+            <param name="serverUrl">数据库地址</param>
+            <param name="user">登录账号</param>
+            <param name="pwd">登录密码</param>
+            <param name="database">数据库名称</param>
+            <param name="port">请求端口</param>
+            <param name="sqlStr">sql脚本</param>
+            <param name="paraLst">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.ExecSql(SqlSugar.DbType,System.String,System.String)">
+            <summary>
+            执行查询操作-根据数据库完整的配置-亲测可行
+            </summary>
+            <param name="dbType">数据库类型</param>
+            <param name="connectionStr">数据库连接字符串</param>
+            <param name="sqlStr">执行的Sql脚本</param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.ExecProc(SqlSugar.DbType,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{SqlSugar.SugarParameter})">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <param name="spName"></param>
+            <param name="paraLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.ExecSqlNonQuery(SqlSugar.DbType,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{SqlSugar.SugarParameter})">
+            <summary>
+            暂未使用
+            </summary>
+            <param name="dbType"></param>
+            <param name="serverUrl"></param>
+            <param name="user"></param>
+            <param name="pwd"></param>
+            <param name="database"></param>
+            <param name="port"></param>
+            <param name="sqlStr"></param>
+            <param name="paraLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.DBInfoService.SetDBTableAddress(System.String)">
+            <summary>
+            拆分访问的数据库字段
+            </summary>
+            <param name="DBSettings">连接字符串</param>
+        </member>
+        <member name="T:ProjectWebApiNet5.Configuration.LogHelperText">
+            <summary>
+            往指定文件夹下，每天写入日志信息
+            </summary>
+        </member>
+        <member name="F:ProjectWebApiNet5.Configuration.LogHelperText.path">
+            <summary>
+            在网站根目录下创建日志目录(bin文件夹→debug文件夹→logs文件夹)
+            </summary>
+        </member>
+        <member name="F:ProjectWebApiNet5.Configuration.LogHelperText.loglock">
+            <summary>
+            死锁-锁住队列
+            </summary>
+        </member>
+        <member name="M:ProjectWebApiNet5.Configuration.LogHelperText.Debug(System.String)">
+            <summary>
+            调试提示
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:ProjectWebApiNet5.Configuration.LogHelperText.Info(System.String)">
+            <summary>
+            消息提示
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:ProjectWebApiNet5.Configuration.LogHelperText.Error(System.String)">
+            <summary>
+            问题提示
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:ProjectWebApiNet5.Configuration.LogHelperText.WriteLog(System.String,System.String)">
+            <summary>
+            开始写入日志
+            </summary>
+            <param name="type"></param>
+            <param name="content"></param>
+        </member>
+        <member name="T:ProjectWebApiNet5.Controllers.TestController">
+            <summary>
+            测试Controllers
+            </summary>
+        </member>
+        <member name="M:ProjectWebApiNet5.Controllers.TestController.#ctor(Microsoft.Extensions.Options.IOptions{ProjectWebApiNet5.Service.LogMessages.LogMessagesService},Microsoft.Extensions.Options.IOptions{ProjectWebApiNet5.Service.ValuesService},Microsoft.Extensions.Logging.ILogger{ProjectWebApi.Configuration.LogHelper})">
+            <summary>
+            构造注入
+            </summary>
+            <param name="logmessagesservice">日志类，往表记录</param>
+            <param name="valuesservice">测试类</param>
+            <param name="logger">日志类，往Text文件输入</param>
+        </member>
+        <member name="M:ProjectWebApiNet5.Controllers.TestController.GetTest">
+            <summary>
+            GetTest_测试接口通
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApiNet5.Controllers.TestController.GetParams(System.Int32,System.String,System.String,ProjectWebApi.Model.DBTableAddress)">
+            <summary>
+            Request Payload 传参 - 带必传值限制
+            </summary>
+            <param name="tagetArchType">类型</param>
+            <param name="modelCode">编码</param>
+            <param name="uniqueCode">上级编码</param>
+            <param name="input">信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApiNet5.Controllers.TestController.GetEformEdrmsBorrowInfo">
+            <summary>
+            测试-获取数据库列表信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApiNet5.Controllers.TestController.GetLogMessagesPageList">
+            <summary>
+            测试查询日志消息列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApiNet5.Controllers.TestController.GetIActionResult(System.Int32)">
+            <summary>
+            测试第二种输出方式
+            </summary>
+            <param name="Id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectWebApiNet5.Model.Public.LogMessagesModel">
+            <summary>
+            公共记录日志消息
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.LogMessagesModel.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.LogMessagesModel.createTime">
+            <summary>
+            操作时间
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.LogMessagesModel.createId">
+            <summary>
+            操作人编号
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.LogMessagesModel.createName">
+            <summary>
+            操作人姓名
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.LogMessagesModel.type">
+            <summary>
+            操作类型编码（1:进入方法，2:请求失败，3:离开方法）
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.LogMessagesModel.typeNote">
+            <summary>
+            操作备注
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.LogMessagesModel.methodName">
+            <summary>
+            方法名称
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.LogMessagesModel.inputParameter">
+            <summary>
+            输入参数
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.LogMessagesModel.outputParameter">
+            <summary>
+            输出参数
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.LogMessagesModel.contentMessages">
+            <summary>
+            内容消息
+            </summary>
+        </member>
+        <member name="T:ProjectWebApiNet5.Model.Public.PagingModel">
+            <summary>
+            分页查询
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.PagingModel.SearchField">
+            <summary>
+            精确查询添加Json
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.PagingModel.RangeField">
+            <summary>
+            范围查询条件
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.PagingModel.FuzzyField">
+            <summary>
+            模糊条件查询
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.PagingModel.Page">
+            <summary>
+            当前页数
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.PagingModel.Size">
+            <summary>
+            每页条数
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.PagingModel.SortField">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:ProjectWebApiNet5.Model.Public.PagingModel.SortOrder">
+            <summary>
+            排序顺序
+            </summary>
+        </member>
+        <member name="T:ProjectWebApiNet5.Service.ValuesService">
+            <summary>
+            测试 Service
+            </summary>
+        </member>
+        <member name="M:ProjectWebApiNet5.Service.ValuesService.GetEformEdrmsBorrowInfo">
+            <summary>
+            测试直接查询数据库数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectWebApiNet5.Service.LogMessages.LogMessagesService">
+            <summary>
+            封装操作日志信息记录
+            </summary>
+        </member>
+        <member name="M:ProjectWebApiNet5.Service.LogMessages.LogMessagesService.AddLogMessages(ProjectWebApiNet5.Model.Public.LogMessagesModel)">
+            <summary>
+            添加借阅申请主表
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApiNet5.Service.LogMessages.LogMessagesService.GetLogMessagesPageList(ProjectWebApiNet5.Model.Public.PagingModel,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="model">分页</param>
+            <param name="errorMsg">回调变量</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectWebApiNet6.Controllers.ValuesController">
+            <summary>
+            测试Controllers
+            </summary>
+        </member>
+        <member name="M:ProjectWebApiNet6.Controllers.ValuesController.Getxxy">
+            <summary>
+            GET: api ValuesController.GetEformEdrmsBorrowInfo 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApiNet6.Controllers.ValuesController.Get(System.Int32)">
+            <summary>
+            GET api/ValuesController/5
+            </summary>
+            <param name="id">编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectWebApiNet6.Controllers.ValuesController.Post(System.String)">
+            <summary>
+            POST api/ValuesController
+            </summary>
+            <param name="value">值</param>
+        </member>
+        <member name="M:ProjectWebApiNet6.Controllers.ValuesController.Put(System.Int32,System.String)">
+            <summary>
+            PUT api/ValuesController/5
+            </summary>
+            <param name="id">编号</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:ProjectWebApiNet6.Controllers.ValuesController.Delete(System.Int32)">
+            <summary>
+            DELETE api/ValuesController/5
+            </summary>
+            <param name="id">编号</param>
+        </member>
+    </members>
+</doc>
